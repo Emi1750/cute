@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>T T</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe0ec 0%, #b5f3ff 100%);
+            font-family: 'Segoe UI', 'Prompt', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 60px;
+            background: #fff8fc;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(255, 182, 193, 0.2);
+            display: inline-block;
+            padding: 40px 60px;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #6c63ff;
+            font-size: 1.2em;
+        }
+        .cute-btn {
+            background: #ffb6c1;
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 12px 32px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255, 182, 193, 0.3);
+            transition: background 0.2s;
+        }
+        .cute-btn:hover {
+            background: #ff69b4;
+        }
+        .cute-img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        /* Modal styles */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0; top: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(255, 182, 193, 0.25);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal {
+            background: #fff8fc;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(255, 182, 193, 0.3);
+            padding: 32px 24px;
+            max-width: 320px;
+            text-align: center;
+            position: relative;
+            animation: pop 0.3s;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-cute-icon {
+            font-size: 2.5em;
+            margin-bottom: 12px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #ff69b4;
+            cursor: pointer;
+        }
+        .modal-message {
+            color: #6c63ff;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="d:\6840209104 Emi\แงงงงง\TvT.jfif" alt="Cute Cat" class="cute-img">
+        <h1>นี่ๆมีอะไรจะบอก</h1>
+        <p>ไม่ได้ให้ช่วยเช็คอะไรหรอแต่ลองกดปุ่มดูก่อน</p>
+        <button class="cute-btn" onclick="showModal()">ลองกดดูๆ</button>
+    </div>
+    <!-- Modal Popup -->
+    <div class="modal-bg" id="modalBg">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-cute-icon">🌸</div>
+            <div class="modal-message">
+                ขอโทษนะสำหรับเมื่อก่อนที่เคยงี่เง่า หนูทักมาบ่อยๆแค่คิดถึงเฉยๆ เพราะรู้ว่ายังไงพี่ก็ลืมหนูได้แล้ว<br>
+                แค่อยากมาอวยพร ว่าขอให้พี่เจอคนที่ดีและรักพี่มากๆนะ ไม่ต้องกลับมาหาหนูหรือทักมาหรอก<br>
+                แค่อยากขอโทษเท่านั้น
+            </div>
+        </div>
+    </div>
+    <script>
+        function showModal() {
+            document.getElementById('modalBg').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modalBg').style.display = 'none';
+        }
+        // ปิด modal เมื่อคลิกพื้นหลัง
+        document.getElementById('modalBg').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
